@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p> It's hard work study javascript</p>
+	<script>
+		
+		var summ = (function () {
+          var sum = 0;
+    
+        return {
+          add: function() {
+			  sum += summArgs(arguments);
+			  return this;
+           
+          },
+          sub: function() {
+			  sum = sum - summArgs(arguments);
+			  return this;
+          
+          },
+          result: function() {
+                 return sum;
+          }
+        }
+        
+       function summArgs(args){
+        var summ1 = 0;
+        var argsArr = Array.prototype.slice.call(args);
+		   
+        for (var i = 0; i < argsArr.length; i++){
+            summ1 += argsArr[i];
+        }
+        return summ1;
+       }
+       })();
+      
+       alert(summ.add(4,2,3).add(4).add(5,6).sub(1).sub(2).result());
+	   console.log(summ.add(1, 2, 3));
+		
+	</script>
+</body>
+</html>
